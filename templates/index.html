@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyle.css') }}">
@@ -46,5 +46,89 @@
   <p class="tip">Press Tab</p>
   <div class="signup-button">Credit card Fraud Detection</div>
 </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexstyle.css') }}">
+    <title>ML API</title>
+    <style>
+        /* Additional styles for displaying user inputs */
+        .user-input-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .user-input {
+            font-size: 16px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .formatted-input {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('predict')}}" method="POST">
+        <input id="input-1" type="text" placeholder="Enter time" name ="time" required autofocus />
+        <label for="input-1">
+          <span class="label-text">TIME</span>
+          <span class="nav-dot"></span>
+          <div class="signup-button-trigger">Credit Card Fraud Prediction</div>
+        </label>
+        <input id="input-2" type="text" placeholder="Enter Amount" name="amount" required />
+        <label for="input-2">
+          <span class="label-text">AMOUNT</span>
+          <span class="nav-dot"></span>
+        </label>
+        <input id="input-3" type="text" placeholder="Enter Transaction Method" name="tm" required />
+        <label for="input-3">
+          <span class="label-text">Transaction Method</span>
+          <span class="nav-dot"></span>
+        </label>
+        <input id="input-4" type="text" placeholder="Transaction id" name="ti" required />
+        <label for="input-4">
+          <span class="label-text">Transaction id</span>
+          <span class="nav-dot"></span>
+        </label>
+        <input id="input-5" type="text" placeholder="Enter Type Of card" name="ct" required />
+        <label for="input-5">
+          <span class="label-text">Card Type</span>
+          <span class="nav-dot"></span>
+        </label>
+        <input id="input-6" type="text" placeholder="Enter Location" name="location" required />
+        <label for="input-6">
+          <span class="label-text">Enter Location</span>
+          <span class="nav-dot"></span>
+        </label>
+        <input id="input-7" type="text" placeholder="Enter Bank" name="em" required />
+        <label for="input-7">
+          <span class="label-text">Enter Bank</span>
+          <span class="nav-dot"></span>
+        </label>
+
+
+        <button type="submit">Predict</button>
+        <p class="tip">Press Tab</p>
+        <div class="signup-button">Credit card Fraud Detection</div>
+    </form>
+
+    <!-- Display user inputs -->
+    <div class="user-input-container">
+        <h2>Your Input</h2>
+        <p class="user-input">Time: <span class="formatted-input">{{ request.form['time'] }}</span></p>
+        <p class="user-input">Amount: <span class="formatted-input">{{ request.form['amount'] }}</span></p>
+        <p class="user-input">Transaction Method: <span class="formatted-input">{{ request.form['tm'] }}</span></p>
+        <p class="user-input">Transaction ID: <span class="formatted-input">{{ request.form['ti'] }}</span></p>
+        <p class="user-input">Card Type: <span class="formatted-input">{{ request.form['ct'] }}</span></p>
+        <p class="user-input">Location: <span class="formatted-input">{{ request.form['location'] }}</span></p>
+        <p class="user-input">Enter Bank: <span class="formatted-input">{{ request.form['em'] }}</span></p>
+    </div>
 </body>
 </html>

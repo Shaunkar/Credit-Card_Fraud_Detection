@@ -176,7 +176,7 @@ best_parameters = grid_search.best_params_
 print("Best Accuracy: {:.2f} %".format(best_accuracy*100))
 print("Best Parameters:", best_parameters)
 
-svc_param=SVC(kernel='rbf',gamma=0.01,C=100,probability=True)
+svc_param=SVC(kernel='rbf',gamma=0.01,C=100)
 svc_param.fit(X_train,y_train)
 
 import pickle
