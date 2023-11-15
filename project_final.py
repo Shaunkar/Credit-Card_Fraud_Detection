@@ -185,3 +185,4 @@ pickle.dump(svc_param, open('model.pkl','wb'))
 
 model=pickle.load(open('model.pkl','rb'))
 
+
